@@ -1,0 +1,107 @@
+<!DOCTYPE html>
+<html lang="it">
+<head>
+<meta charset="UTF-8">
+<meta name="viewport" content="width=device-width, initial-scale=1.0">
+<title>Logo Scroller</title>
+<style>
+  .scroller {
+    width: 100%;
+    max-width: 100vw;
+    overflow-x: hidden;
+    position: relative;
+    box-sizing: border-box;
+  }
+  .scroller__inner {
+    display: flex;
+    flex-wrap: nowrap;
+    gap: 2rem; /* Spazio tra i loghi */
+  }
+  /* Effetto fade su entrambi i lati */
+  .scroller[data-animated="true"] {
+    -webkit-mask-image: linear-gradient(to right, transparent 0%, white 10%, white 90%, transparent 100%);
+    mask-image: linear-gradient(to right, transparent 0%, white 10%, white 90%, transparent 100%);
+  }
+  .scroller[data-animated="true"] .scroller__inner {
+    width: max-content;
+    animation: scroll var(--_animation-duration, 40s) var(--_animation-direction, forwards) linear infinite;
+  }
+  .scroller[data-direction="right"] {
+    --_animation-direction: reverse;
+  }
+  .scroller[data-direction="left"] {
+    --_animation-direction: forwards;
+  }
+  .scroller[data-speed="fast"] {
+    --_animation-duration: 20s;
+  }
+  .scroller[data-speed="slow"] {
+    --_animation-duration: 100s;
+  }
+  @keyframes scroll {
+    to {
+      transform: translateX(calc(-50% - 0.5rem));
+    }
+  }
+  .scroller img {
+    height: 80px;
+    width: 80px;
+    object-fit: contain; /* Mantiene il rapporto senza sformare l'immagine */
+    filter: grayscale(100%); /* Loghi in bianco e nero */
+    display: inline-block;
+  }
+  @media (max-width: 932px) {
+    .scroller img {
+      width: 60px;
+      height: 60px;
+    }
+  }
+</style>
+</head>
+<body>
+<div class="scroller" data-direction="left" data-speed="slow">
+  <div class="scroller__inner">
+    <img src="https://storage.googleapis.com/msgsndr/OMD3pGP5NM9uChm2wJoi/media/67e19a261870f48da9396b96.jpeg" alt="Digital-producer-web-agency">
+    <img src="https://storage.googleapis.com/msgsndr/OMD3pGP5NM9uChm2wJoi/media/67b86a7d162c15903a362f05.png" alt="la-casa-burger-pavona">
+    <img src="https://storage.googleapis.com/msgsndr/OMD3pGP5NM9uChm2wJoi/media/67b86a4efa0e0bbadba94c37.png" alt="ales-sporting-club-padel">
+    <img src="https://storage.googleapis.com/msgsndr/OMD3pGP5NM9uChm2wJoi/media/67b86a2154e493df5c96bc04.jpeg" alt="tessuti-texline-ariccia">
+    <img src="https://storage.googleapis.com/msgsndr/OMD3pGP5NM9uChm2wJoi/media/67b86a21fa0e0be3f4a94c1a.png" alt="fashion-firme-ariccia">
+    <img src="https://storage.googleapis.com/msgsndr/OMD3pGP5NM9uChm2wJoi/media/67b869bc760431b33b247bf1.png" alt="diffusione-tessuti-roma">
+    <img src="https://storage.googleapis.com/msgsndr/OMD3pGP5NM9uChm2wJoi/media/67b5b946145bb718262ab0fc.png" alt="godomina-crm-marketing">
+    <img src="https://storage.googleapis.com/msgsndr/OMD3pGP5NM9uChm2wJoi/media/67e19fdc7c102066fad3f045.png" alt="fabrizio-ricci-osteopata">
+    <img src="https://storage.googleapis.com/msgsndr/OMD3pGP5NM9uChm2wJoi/media/67e19fdc7c855432abd12ef6.png" alt="smartech-tecnology">
+    <img src="https://storage.googleapis.com/msgsndr/OMD3pGP5NM9uChm2wJoi/media/67e19fdc326d15fc9666195a.jpeg" alt="team-braies-abbigliamento">
+    <img src="https://storage.googleapis.com/msgsndr/OMD3pGP5NM9uChm2wJoi/media/67e19fdc9643c1361c5dec0a.png" alt="new-hair-now-club">
+    <img src="https://storage.googleapis.com/msgsndr/OMD3pGP5NM9uChm2wJoi/media/67e19fdc326d15308266195c.jpeg" alt="level-up-distribuzione-estetica">
+    <img src="https://storage.googleapis.com/msgsndr/OMD3pGP5NM9uChm2wJoi/media/67e19fdc1870f43ea1398ff2.png" alt="Client Logo 13">
+    <img src="https://storage.googleapis.com/msgsndr/OMD3pGP5NM9uChm2wJoi/media/67e19fdcfa73777ddc5c2252.png" alt="Client Logo 14">
+    <img src="https://storage.googleapis.com/msgsndr/OMD3pGP5NM9uChm2wJoi/media/67e19fdcafbf86a1770b1a2b.jpeg" alt="Client Logo 15">
+    <img src="https://storage.googleapis.com/msgsndr/OMD3pGP5NM9uChm2wJoi/media/67e19fdc326d1544a666195d.png" alt="Client Logo 16">
+    <img src="https://storage.googleapis.com/msgsndr/OMD3pGP5NM9uChm2wJoi/media/67e19fdc326d15dabf66195b.jpeg" alt="Client Logo 17">
+    <img src="https://storage.googleapis.com/msgsndr/OMD3pGP5NM9uChm2wJoi/media/67e19fdcf31f8ffd18a7d5b0.jpeg" alt="Client Logo 18">
+    <img src="https://storage.googleapis.com/msgsndr/OMD3pGP5NM9uChm2wJoi/media/67e1a24f326d15aa6d661daa.png" alt="Client Logo 19">
+    <img src="https://storage.googleapis.com/msgsndr/OMD3pGP5NM9uChm2wJoi/media/67e1a25592717f0023d3a9d5.png" alt="Client Logo 20">
+    <img src="https://storage.googleapis.com/msgsndr/OMD3pGP5NM9uChm2wJoi/media/67e1a25dfa7377799c5c2603.jpeg" alt="Client Logo 21">
+  </div>
+</div>
+<script>
+const scrollers = document.querySelectorAll(".scroller");
+if (!window.matchMedia("(prefers-reduced-motion: reduce)").matches) {
+  addAnimation();
+}
+function addAnimation() {
+  scrollers.forEach((scroller) => {
+    scroller.setAttribute("data-animated", true);
+    const scrollerInner = scroller.querySelector(".scroller__inner");
+    const scrollerContent = Array.from(scrollerInner.children);
+    // Duplichiamo i loghi per creare un effetto "loop" infinito
+    scrollerContent.forEach((item) => {
+      const duplicatedItem = item.cloneNode(true);
+      duplicatedItem.setAttribute("aria-hidden", true);
+      scrollerInner.appendChild(duplicatedItem);
+    });
+  });
+}
+</script>
+</body>
+</html>
